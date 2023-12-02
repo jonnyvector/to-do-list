@@ -6,9 +6,9 @@ const newTask = createTask("build eggs", "i need to build an egg", "12/23/23");
 let id = 0;
 
 function createProject(name) {
-  let projectArray = [];
+  let taskArray = [];
   id++;
-  return { id, name, projectArray };
+  return { id, name, taskArray };
 }
 
 createProject("Shopify");

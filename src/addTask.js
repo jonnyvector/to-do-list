@@ -17,18 +17,16 @@ let eatAnApple = [];
 function addTask(task) {
   let projectId = task.projectId;
 
-  if (task !== undefined && projectId === undefined) {
+  if (task !== undefined && projectId === null) {
     taskList.push(task);
   }
-  if (task !== undefined && projectId !== undefined) {
-    addProject().projectList.forEach((project) => {
+  if (task !== undefined && projectId !== null) {
+    addProject().projectsArray.forEach((project) => {
       if (task.id === project.id) {
-        project.projectArray.push(task);
+        project.taskArray.push(task);
       }
     });
   }
-
-  console.log(addTask);
 
   return { taskList };
 }

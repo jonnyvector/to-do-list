@@ -1,13 +1,13 @@
 import { createProject } from "./createProject";
 
-let projectList = [];
+let projectsArray = [];
 
 function addProject(project) {
   if (project !== undefined) {
-    projectList.push(project);
+    projectsArray.push(project);
   }
 
-  return { projectList };
+  return { projectsArray };
 }
 
 const shopify = createProject("Shopify");

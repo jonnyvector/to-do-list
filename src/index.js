@@ -2,7 +2,8 @@ import { createTask } from "./createTask";
 import { addTask } from "./addTask";
 import { createProject } from "./createProject";
 import { addProject } from "./addProject";
-import { addTaskToProject } from "./addTaskToProject";
+import { project } from "./project";
+import { renderTask } from "./renderTask";
 
 const newTask = createTask(
   "Build a Rocket",
