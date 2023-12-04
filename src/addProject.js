@@ -16,6 +16,8 @@ const beans = createProject("Beans");
 addProject(shopify);
 addProject(beans);
 
-// console.log(projectList);
+console.log(shopify);
+
+console.log(addProject().projectsArray);
 
 export { addProject };
