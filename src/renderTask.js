@@ -6,24 +6,40 @@ const taskDescription = document.getElementById("taskDescription");
 const dueDate = document.getElementById("dueDate");
 const projectId = document.getElementById("projectId");
 const submitButton = document.getElementById("submitButton");
+const defaultTaskList = document.getElementById("defaultTaskList");
+const taskArray = addTask().taskList;
 
-function renderTask() {
-  submitButton.addEventListener("click", function (e) {
-    e.preventDefault();
+function renderTask(task) {
+  const taskContainer = document.createElement("div");
+  const taskName = document.createElement("p");
+  const taskDescription = document.createElement("p");
+  const dueDate = document.createElement("p");
 
-    let name = taskName.value;
-    let description = taskDescription.value;
-    let date = dueDate.value;
-    let project =
-      projectId.value === "" ? projectId.value : parseFloat(projectId.value);
+  taskContainer.className = "task-container";
+  taskContainer.classList.add(`${task.id}`);
 
-    var newTask = createTask(name, description, date, project);
+  taskName.textContent = task.name;
+  taskDescription.textContent = task.description;
+  dueDate.textContent = task.dueDate;
 
-    addTask(newTask);
-    taskForm.reset();
-  });
+  defaultTaskList.appendChild(taskContainer);
+  taskContainer.appendChild(taskName);
+  taskContainer.appendChild(taskDescription);
+  taskContainer.appendChild(dueDate);
 }
 
-renderTask();
+submitButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  const name = taskName.value;
+  const description = taskDescription.value;
+  const date = dueDate.value;
+  const project =
+    projectId.value === "" ? projectId.value : parseFloat(projectId.value);
+
+  var newTask = createTask(name, description, date, project);
+  addTask(newTask);
+  renderTask(newTask);
+  taskForm.reset();
+});
 
 export { renderTask };

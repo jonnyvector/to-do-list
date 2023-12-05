@@ -1,12 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
   font-family: "Arial", sans-serif;
+}
+
+.task-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-container {
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 form {

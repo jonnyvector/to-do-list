@@ -7,37 +7,47 @@
     <title>To Do List</title>
   </head>
   <body>
-    <form id="taskForm">
-      <label for="taskName">Task Name:</label>
-      <input type="text" id="taskName" name="taskName" required />
+    <div class="task-list-container">
+      <div id="defaultTaskList"></div>
+    </div>
+    <div class="form-container">
+      <form id="taskForm">
+        <label for="taskName">Task Name:</label>
+        <input type="text" id="taskName" name="taskName" required />
 
-      <br />
+        <br />
 
-      <label for="taskDescription">Task Description:</label>
-      <textarea id="taskDescription" name="taskDescription" required></textarea>
+        <label for="taskDescription">Task Description:</label>
+        <textarea
+          id="taskDescription"
+          name="taskDescription"
+          required
+        ></textarea>
 
-      <br />
+        <br />
 
-      <label for="dueDate">Due Date:</label>
-      <input
-        type="date"
-        id="dueDate"
-        name="dueDate"
-        placeholder="MM/DD/YYYY"
-        required
-      />
+        <label for="dueDate">Due Date:</label>
+        <input
+          type="date"
+          id="dueDate"
+          name="dueDate"
+          placeholder="MM/DD/YYYY"
+          required
+        />
 
-      <br />
+        <br />
 
-      <label for="projectId">Project:</label>
-      <select id="projectId" name="projectId">
-        <option value="">Select a Project</option>
-        <option value="1">None</option>
-      </select>
-      <br />
+        <label for="projectId">Project:</label>
+        <select id="projectId" name="projectId">
+          <option value="">Select a Project</option>
+          <option value="1">None</option>
+        </select>
+        <br />
 
-      <button id="submitButton" type="submit">Create Task</button>
-    </form>
+        <button id="submitButton" type="submit">Create Task</button>
+      </form>
+    </div>
+
     <script src="bundle.js"></script>
   </body>
 </html>
