@@ -14,17 +14,27 @@ const projectTask = createTask(
   5
 );
 
-console.log(beanTask);
-console.log(shopifyTask);
-console.log(projectTask);
+const calculatorTask = createTask(
+  "shopify calculator",
+  "create a calculator",
+  "12/26/2023",
+  4
+);
+
+// console.log(beanTask);
+// console.log(shopifyTask);
+// console.log(projectTask);
 
 let taskList = [];
 let projectList = [];
 
-console.log(addProject().projectsArray);
+// console.log(addProject().projectsArray);
 
 function addTask(task) {
-  if (task !== undefined && task.projectId === null) {
+  if (
+    task !== undefined &&
+    (task.projectId === "" || task.projectId === null)
+  ) {
     taskList.push(task);
   }
 
@@ -39,11 +49,7 @@ function addTask(task) {
   return { taskList, projectList };
 }
 
-addTask(shopifyTask);
-addTask(beanTask);
-addTask(projectTask);
-
-console.log(addTask().taskList);
-console.log(addTask().projectList);
+// console.log(addTask().taskList);
+console.log(addProject().projectsArray);
 
 export { addTask };
