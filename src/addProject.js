@@ -14,6 +14,7 @@ function addProject(project) {
 const shopifyProject = createProject("Shopify");
 const beanProject = createProject("Beans");
 const magentoProject = createProject("Magento");
+
 addProject(shopifyProject);
 addProject(beanProject);
 addProject(magentoProject);
