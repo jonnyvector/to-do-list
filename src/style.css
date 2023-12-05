@@ -23,7 +23,8 @@ label {
 }
 
 input,
-textarea {
+textarea,
+select {
   width: 100%;
   padding: 8px;
   margin-bottom: 16px;

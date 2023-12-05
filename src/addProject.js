@@ -1,4 +1,6 @@
 import { createProject } from "./createProject";
+const projectsDropDown = document.getElementById("projectId");
+console.log(projectsDropDown);
 
 let projectsArray = [];
 
@@ -16,7 +18,16 @@ const beans = createProject("Beans");
 addProject(shopify);
 addProject(beans);
 
-// console.log(shopify);
+addProject().projectsArray.forEach((project) => {
+  let option = document.createElement("option");
+  option.setAttribute("value", project.id);
+  console.log(option);
+
+  let optionText = document.createTextNode(project.name);
+  option.appendChild(optionText);
+
+  projectsDropDown.appendChild(option);
+});
 
 console.log(addProject().projectsArray);
 
