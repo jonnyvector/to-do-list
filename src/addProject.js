@@ -1,6 +1,5 @@
 import { createProject } from "./createProject";
 const projectsDropDown = document.getElementById("projectId");
-console.log(projectsDropDown);
 
 let projectsArray = [];
 
@@ -12,16 +11,16 @@ function addProject(project) {
   return { projectsArray };
 }
 
-const shopify = createProject("Shopify");
-const beans = createProject("Beans");
-
-addProject(shopify);
-addProject(beans);
+const shopifyProject = createProject("Shopify");
+const beanProject = createProject("Beans");
+const magentoProject = createProject("Magento");
+addProject(shopifyProject);
+addProject(beanProject);
+addProject(magentoProject);
 
 addProject().projectsArray.forEach((project) => {
   let option = document.createElement("option");
   option.setAttribute("value", project.id);
-  console.log(option);
 
   let optionText = document.createTextNode(project.name);
   option.appendChild(optionText);

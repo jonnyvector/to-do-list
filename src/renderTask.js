@@ -1,5 +1,6 @@
 import { createTask } from "./createTask";
 import { addTask } from "./addTask";
+const taskForm = document.getElementById("taskForm");
 const taskName = document.getElementById("taskName");
 const taskDescription = document.getElementById("taskDescription");
 const dueDate = document.getElementById("dueDate");
@@ -8,19 +9,18 @@ const submitButton = document.getElementById("submitButton");
 
 function renderTask() {
   submitButton.addEventListener("click", function (e) {
-    const name = taskName.value;
-    const description = taskDescription.value;
-    const date = dueDate.value;
-    const project =
-      projectId.value === "" ? projectId.value : parseFloat(projectId.value);
-
     e.preventDefault();
 
+    let name = taskName.value;
+    let description = taskDescription.value;
+    let date = dueDate.value;
+    let project =
+      projectId.value === "" ? projectId.value : parseFloat(projectId.value);
+
     var newTask = createTask(name, description, date, project);
-    console.log(newTask);
+
     addTask(newTask);
-    console.log(addTask().taskList);
-    console.log(addTask().projectList);
+    taskForm.reset();
   });
 }
 
